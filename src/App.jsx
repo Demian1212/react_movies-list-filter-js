@@ -1,12 +1,11 @@
 import './App.scss';
-import { MoviesList } from './components/Movieslist';
+import { MoviesList } from './components/MoviesList';
 import moviesFromServer from './api/movies.json';
 import { useState } from 'react';
 
 export const App = () => {
   const [query, setQuery] = useState('');
 
-  // Фільтрація фільмів згідно з вимогами
   const normalizedQuery = query.trim().toLowerCase();
 
   const visibleMovies = moviesFromServer.filter(movie => {
